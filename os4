@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+ 	int n,i,j,avg_wt=0;
+ 	float avg_tat=0,temp;
+ 	int burst[10],wait[10],process[10];
+ 	printf("\nShortest Job first Scheduling:\n");
+ 	printf("\nEnter the number of processes: ");
+	 scanf("%d",&n);
+	 printf("Enter the Burst time of each process\n");
+	for(i=0;i<n;i++)
+	{
+		printf("Burst time P %d :-",i+1);
+		scanf("%d",&burst[i]);
+		process[i]=i;
+		printf("\n");
+	}
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			if(burst[i]<burst[j])
+			{
+				temp=burst[i];
+				burst[i]=burst[j];
+				burst[j]=temp;
+				temp=process[i];
+				process[i]=process[j];
+				process[j]=temp;
+			}
+		}
+	}
+	printf("\nWaiting time | Turn around Time \n");
+	j=0;
+	for(i=0;i<n;i++)
+	{
+		wait[i]=j;
+		j=burst[i]+j;
+		printf("\nP%d : %d\t%d",process[i]+1,wait[i],wait[i]+burst[i]);
+		avg_wt=avg_wt+wait[i];
+		avg_tat=avg_tat+wait[i]+burst[i];
+	}
+	printf("\n\n\n\n");
+	printf("Average waiting time: %f\nAverage Turn aroundtime :%f\n\n",avg_wt/n,avg_tat/n);
+
+}
