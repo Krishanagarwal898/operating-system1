@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+ 	int n,i,j,avg_wt=0;
+ 	float avg_tat=0,temp;
+ 	int burst[10],wait[10],process[10];
+ 	printf("\nShortest Job first Scheduling:\n");
+ 	printf("\nEnter the number of processes: ");
+	 scanf("%d",&n);
+	 printf("Enter the Burst time of each process\n");
+	for(i=0;i<n;i++)
+	{
+		printf("Burst time P %d :-",i+1);
+		scanf("%d",&burst[i]);
+		process[i]=i;
+		printf("\n");
+	}
+}
