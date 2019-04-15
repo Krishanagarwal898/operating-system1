@@ -6,7 +6,7 @@ int main()
  int i, j, k;
  int need_matrix[10][10], allocated_r[10][10], maximum[10][10];
  int  available_r[10], process[10];
- printf("\nThis program is to check whether the system is in safe state or not");
+ printf("\nThis program is to check whether system is in safe state or not");
   printf("\nEnter the number of process in the system:");
  scanf("%d",&n);
  printf("\n Enter  resources available : ");
