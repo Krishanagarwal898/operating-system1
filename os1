@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+ int n, r;
+ int i, j, k;
+ int need_matrix[10][10], allocated_r[10][10], maximum[10][10];
+ int  available_r[10], process[10];
+ printf("\nThis program is to check whether the system is in safe state or not");
+  printf("\nEnter the number of process in the system:");
+ scanf("%d",&n);
+ printf("\n Enter  resources available : ");
+ scanf("%d",&r);
+ printf("\nEnter available resources :\n");
+ for(i=0;i<r;i++)
+ {  
+ printf("R%d",i);
+  scanf("%d",&available_r[i]);
+  }
+ printf("\n Enter allocation matrix \n");
+ for(i=0;i<n;i++)
+ {
+ printf("p%d",i);      
+ for(j=0;j<r;j++)
+ {
+  scanf("%d",&allocated_r[i][j]);
+ }
+}
+
+  printf("\n Enter MAX matrix  \n");
+
+ for(i=0;i<n;i++)
+ {
+ printf("p%d",i);
+ for(j=0;j<r;j++)
+ {
+  scanf("%d",&maximum[i][j]);
+ }
+ }
+
+ for(i=0;i<n;i++)
+ {
+ printf("\np%d\t",i+1) ;
+ for(j=0;j<r;j++)
+ {
+  need_matrix[i][j]=maximum[i][j]-allocated_r[i][j];
+  printf("\t%d",need_matrix[i][j]);
+  }
+ }
+}
